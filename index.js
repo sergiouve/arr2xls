@@ -2,6 +2,7 @@
 
 var program = require('commander');
 var runner = require('child_process');
+var ProgressBar = require('progress');
 var json2xls = require('json2xls');
 var fs = require('fs');
 
@@ -32,9 +33,21 @@ runner.exec(
 	'php -r \'include("' + in_file + '"); print json_encode(' + native_array + ');\'',
 
 	function (err, stdout, stderr) {
+
 		var parsedArr = JSON.parse(stdout);
 		getEndNodesJSON(parsedArr, '');
+
+		var barOpts = {
+			width		: 40,
+			total		: Object.keys(bufferArr).length,
+			complete	: '=',
+			incomplete	: '-'
+		}
+
+		var bar = new ProgressBar('generating [:bar] :percent', barOpts);
+
 		for (var section in bufferArr) {
+			bar.tick();
 			var tempArray = {
 				'KEY' 	: section,
 				'VALUE'	: bufferArr[section]
@@ -43,6 +56,8 @@ runner.exec(
 		}
 		var xls = json2xls(jsonArr);
 		fs.writeFileSync(out_file, xls, 'binary');
+		console.log('...done!');
+		console.log('Exported to ' + out_file);
 	}
 );
 
