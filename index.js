@@ -20,7 +20,7 @@ in_file = program.inFile;
 out_file = program.outFile;
 native_array = program.array;
 
-var bufferArr = {};
+var bufferArr = [];
 var jsonArr = [];
 
 if (native_array[0] != '$') {
@@ -35,16 +35,12 @@ runner.exec(
 		var parsedArr = JSON.parse(stdout);
 		getEndNodesJSON(parsedArr, '');
 		for (var section in bufferArr) {
-
 			var tempArray = {
 				'KEY' 	: section,
 				'VALUE'	: bufferArr[section]
 			};
-
 			jsonArr.push(tempArray);
-
 		}
-
 		var xls = json2xls(jsonArr);
 		fs.writeFileSync(out_file, xls, 'binary');
 	}
