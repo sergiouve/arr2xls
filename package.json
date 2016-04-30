@@ -1,6 +1,6 @@
 {
   "name": "arr2xls",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "CLI tool for xls conversions",
   "main": "index.js",
   "scripts": {
