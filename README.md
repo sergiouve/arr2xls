@@ -1,13 +1,13 @@
 # xls-converter
 Node.js CLI tool to export arrays to xlsx files.
 
-## Installation
+### Installation
 
 ```
 npm install xls-converter -g
 ```
 
-## Usage
+### Usage
 ```
 xls-converter -i in-file.php -o out-file.xlsx -a array_name
 ```
@@ -21,3 +21,9 @@ xls-converter -i in-file.php -o out-file.xlsx -a array_name
 - [ ] Java
 - [ ] C / C++ / C#
 - [ ] Bash
+
+## Works on
+
+- GNU/Linux
+- OSX
+- ~~Windows~~ (comming soon... maybe)

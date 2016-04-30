@@ -1,10 +1,10 @@
 {
-  "name": "xls-converter",
+  "name": "arr2xls",
   "version": "0.0.1",
   "description": "CLI tool for xls conversions",
   "main": "index.js",
   "scripts": {
-    "test": "xls-converter"
+    "test": "arr2xls"
   },
   "bin": {
     "xls-converter": "./index.js"
