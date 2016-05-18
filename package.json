@@ -1,13 +1,13 @@
 {
   "name": "arr2xls",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "CLI tool for xls conversions",
   "main": "index.js",
   "scripts": {
     "test": "arr2xls"
   },
   "bin": {
-    "xls-converter": "./index.js"
+    "arr2xls": "./index.js"
   },
   "author": "Sergio Uve",
   "license": "MIT",
